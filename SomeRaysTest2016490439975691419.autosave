@@ -1,0 +1,26 @@
+void settings()
+{
+  size(800, 800);
+
+}
+
+Wall[] walls = new Wall[4];
+
+color ballColor = color(255, 80);
+float xPosition, yPosition = 100;
+Ball ball = new Ball(44, ballColor);
+Ray ray = new Ray(xPosition, yPosition, ballColor);
+
+void setup()
+{
+  background(0);
+}
+
+void draw()
+{
+  clear();
+  ball.DrawBall();
+  ball.MoveBall(mouseX, mouseY);
+  ray.SetPosition(mouseX, mouseY);
+  ray.DrawRay();
+}
